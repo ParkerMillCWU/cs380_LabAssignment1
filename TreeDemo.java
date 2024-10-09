@@ -128,8 +128,28 @@ class Node{
 	   with a specific value
 	   */
 	   public boolean find(Node root, int key){
-		 //implement in here
-		  return false;
+		   //loop until you either find the key or key is not in tree
+		   while(true)
+			{
+				//root is null then either the tree doesn't exist or you have reached the end of a branch and the key is not in the tree
+				if(root == null)
+					return false;
+				//if key is less than root, set root to the left subtree
+				if(key < root.value)
+				{
+					root = root.left;
+					continue;
+				}
+				//if key is greater than root, set root to right subtree
+				if(key > root.value)
+				{
+					root = root.right;
+					continue;
+				}
+				//if key equals root, return true
+				if(key == root.value)
+					return true;
+			}
 	   }
 	   
 	   
@@ -205,7 +225,8 @@ class Node{
 	      t1.insert(22);
 	            
 	      System.out.print("in-order :   ");
-	      t1.postOrderTraversal(t1.root);
+
+		  System.out.println(t1.find(t1.root, 32));
 	      System.out.println();
 	           
 	      
