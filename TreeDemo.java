@@ -159,8 +159,21 @@ class Node{
 	   with a smallest key
 	   */
 	   public int getMin(Node root){
-         //implement in here
-	      return 0;
+		 //loop
+         while(root !=null)
+		 {
+			 //if there is a left subtree go there
+			 if(root.left !=null)
+			 {
+				 root = root.left;
+				 continue;
+			 }
+			 //if there isn't this is the minimun value
+			 else
+				 return root.value;
+		 }
+		 //if root is null, tree doesn't exist, return flag value
+		 return Integer.MIN_VALUE;
 	   }
 	  
 	  
@@ -226,7 +239,7 @@ class Node{
 	            
 	      System.out.print("in-order :   ");
 
-		  System.out.println(t1.find(t1.root, 32));
+		  System.out.println(t1.getMin(t1.root));
 	      System.out.println();
 	           
 	      
