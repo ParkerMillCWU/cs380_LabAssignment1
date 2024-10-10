@@ -250,9 +250,15 @@ class Node{
 	      t1.insert(90);
 	      t1.insert(22);
 	            
-	      System.out.print("in-order :   ");
-
+	      System.out.print("\npre-order : ");
+		  t1.preOrderTraversal(t1.root);
+		  System.out.print("\nin-order: ");
+		  t1.inOrderTraversal(t1.root);
+		  System.out.print("\npost-order: ");
+		  t1.postOrderTraversal(t1.root);
+		  System.out.println("\n" + t1.getMin(t1.root));
 		  System.out.println(t1.getMax(t1.root));
+		  System.out.println(t1.find(t1.root, 9));
 	      System.out.println();
 	           
 	      
